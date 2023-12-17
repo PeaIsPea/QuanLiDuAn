@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="d-flex flex-column vh-100">
+    <!-- Navbar -->
+    <nav class="shadow sticky-top navbar navbar-expand-lg navbar-dark bg-navbar-dark">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+            <!-- Navbar brand -->
+            <a class="navbar-brand" href="index.html">GAMESTORE</a>
+
+            <!-- Toggle button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fas fa-bars text-light"></i>
+            </button>
+
+
+            <!-- Collapsible wrapper -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Left links -->
+                <ul class="navbar-nav me-auto d-flex flex-row mt-3 mt-lg-0">
+                    <li class="nav-item text-center mx-2 mx-lg-1">
+                        <a href="index.html" class="nav-link" aria-current="page" href="#!">
+                            <div>
+                                <i class="fas fa-home fa-lg mb-1"></i>
+                            </div>
+                            Trang Chủ
+                        </a>
+                        <!--
+                    </li>
+                    <li class="nav-item text-center mx-2 mx-lg-1">
+                        <a class="nav-link" href="#!">
+                            <div>
+                                <i class="far fa-envelope fa-lg mb-1"></i>
+                                <span class="badge rounded-pill badge-notification bg-danger">11</span>
+                            </div>
+                            Link
+                        </a>
+                    </li>
+                    <li class="nav-item text-center mx-2 mx-lg-1">
+                        <a class="nav-link disabled" aria-disabled="true" href="#!">
+                            <div>
+                                <i class="far fa-envelope fa-lg mb-1"></i>
+                                <span class="badge rounded-pill badge-notification bg-warning">11</span>
+                            </div>
+                            Disabled
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown text-center mx-2 mx-lg-1">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <div>
+                                <i class="far fa-envelope fa-lg mb-1"></i>
+                                <span class="badge rounded-pill badge-notification bg-primary">11</span>
+                            </div>
+                            Dropdown
+                        </a> -->
+                        <!-- Dropdown menu -->
+                        <!--
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </li>
+                        </ul>
+                    </li> -->
+                </ul>
+                <!-- Left links -->
+
+                <!-- Right links -->
+                <ul class="navbar-nav ms-auto d-flex flex-row mt-3 mt-lg-0">
+                    <li class="nav-item dropdown text-center mx-2 mx-lg-1">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <div>
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                            Tài Khoản
+                        </a>
+                        <!-- Dropdown menu -->
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item" href="{{ route('login') }}">
+                                    Đăng nhập
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{{ route('signup') }}">
+                                    Đăng ký
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item text-center mx-2 mx-lg-1">
+                        <a class="nav-link" aria-current="page" href="cart.html">
+                            <div>
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <span class="badge rounded-pill badge-notification bg-info">
+                                    0
+                                </span>
+                            </div>
+                            Giỏ Hàng
+                        </a>
+                    </li>
+                </ul>
+                <!-- Right links -->
+
+                <!-- Search form -->
+                <form action="search.html" method="GET" class="d-flex input-group w-auto ms-lg-3 my-3 my-lg-0">
+                    <input type="search" name="q" class="form-control" placeholder="Tìm kiếm sản phẩm"
+                        aria-label="Search" />
+                    <button class="btn btn-primary" data-bs-ripple-color="dark">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+            </div>
+            <!-- Collapsible wrapper -->
+        </div>
+        <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
+
+    <!-- Carousel -->
+    <div class="container-fluid pt-3">
+        <main>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide swiper-slide--item">
+                        <img src="20xx.webp" alt="">
+                        <div class="pt-1">
+                            <a class="text-decoration-none" href="">
+                                <h2>20XX</h2>
+                            </a>
+                            <p>20XX is a roguelike action platformer that you can play with a friend. Jump and shoot
+                                your way through ever-changing levels, collect awesome new powers, and battle mighty
+                                bosses in the name of saving the human race maybe!.</p>
+                            <div class="pt-0">
+                                &nbsp;
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide swiper-slide--item">
+                        <img src="30xx.webp" alt="">
+                        <div class="pt-1">
+                            <a class="text-decoration-none" href="">
+                                <h2>30XX</h2>
+                            </a>
+                            <p>
+                                Jump, shoot, and slash your way through 30XX, the roguelike action platformer you can
+                                play with a friend! Explore lush, ever-changing worlds that mix precise platforming with
+                                fevered combat. Destroy fearsome Guardians. Master unique Powers. Rediscover the
+                                thousand years we've lost.
+                            </p>
+                            <div class="pt-0">
+                                &nbsp;
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide swiper-slide--item">
+                        <img src="adofai.webp" alt="">
+                        <div class="pt-1">
+                            <a class="text-decoration-none" href="">
+                                <h2>A Dance of Fire and ice</h2>
+                            </a>
+                            <p>
+                                A Dance of Fire and Ice is a strict rhythm game. Keep your focus as you guide two
+                                orbiting planets along a winding path without breaking their perfect equilibrium.
+                            </p>
+                            <div class="pt-0">
+                                &nbsp;
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide swiper-slide--item">
+                        <img src="among-us.webp" alt="">
+                        <div class="pt-1">
+                            <a class="text-decoration-none" href="">
+                                <h2>Among Us</h2>
+                            </a>
+                            <p>
+                                An online and local party game of teamwork and betrayal for 4-15 players...in space!
+                            </p>
+                            <div class="pt-0">
+                                &nbsp;
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide swiper-slide--item">
+                        <img src="angels-of-death.webp" alt="">
+                        <div class="pt-1">
+                            <a class="text-decoration-none" href="">
+                                <h2>Angels of Death</h2>
+                            </a>
+                            <p>
+                                "Please... kill me." "Help me get outta here, and I'll kill you." ~ Angels of Death is a
+                                psychological horror-adventure game, consisting of four episodes.
+                            </p>
+                            <div class="pt-0">
+                                &nbsp;
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+            <img src="https://cdn.pixabay.com/photo/2021/11/04/19/39/jellyfish-6769173_960_720.png" alt="" class="bg">
+            <img src="https://cdn.pixabay.com/photo/2012/04/13/13/57/scallop-32506_960_720.png" alt="" class="bg2">
+        </main>
+    </div>
+    <!-- Carousel -->
+
+    <!-- Thanh giá phù hợp -->
+    <div class="container pt-5">
+        <p class="display-6 text-white text-capitalize">Lọc theo giá</p>
+        <hr class="border-bottom border-secondary">
+        <div class="row text-center text-white fs-4 rec-price fw-bold">
+            <div class="col-md-2 col-sm-6 col-6">
+                <div class="card shadow p-3 mb-5 rounded">
+                    <div class="card-body">
+                        <p class="card-text">20.000đ</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-6 col-6">
+                <div class="card shadow p-3 mb-5 rounded">
+                    <div class="card-body">
+                        <p class="card-text">50.000đ</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-6 col-6">
+                <div class="card shadow p-3 mb-5 rounded">
+                    <div class="card-body">
+                        <p class="card-text">75.000đ</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2 col-sm-6 col-6">
+                <div class="card shadow p-3 mb-5 rounded">
+                    <div class="card-body">
+                        <p class="card-text">100.000đ</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-6 col-6">
+                <div class="card shadow p-3 mb-5 rounded">
+                    <div class="card-body">
+                        <p class="card-text">125.000đ</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-6 col-6">
+                <div class="card shadow p-3 mb-5 rounded">
+                    <div class="card-body">
+                        <p class="card-text">150.000đ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Thanh giá phù hợp -->
+
+    <!-- Lọc theo thể loại-->
+    <div class="container pt-3">
+        <p class="display-6 text-white text-capitalize">Lọc theo thể loại</p>
+        <hr class="border-bottom border-secondary">
+        <div class="row text-center text-white rec-price fw-bold">
+            <div class="col-md-2 col-sm-6 col-6">
+                <div class="card shadow p-3 mb-5 rounded">
+                    <div class="card-body">
+                        <p class="card-text">Action</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-6 col-6">
+                <div class="card shadow p-3 mb-5 rounded">
+                    <div class="card-body">
+                        <p class="card-text">Tower Defense</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-6 col-6">
+                <div class="card shadow p-3 mb-5 rounded">
+                    <div class="card-body">
+                        <p class="card-text">3D</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2 col-sm-6 col-6">
+                <div class="card shadow p-3 mb-5 rounded">
+                    <div class="card-body">
+                        <p class="card-text">RPG</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-6 col-6">
+                <div class="card shadow p-3 mb-5 rounded">
+                    <div class="card-body">
+                        <p class="card-text">Open World</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-6 col-6">
+                <div class="card shadow p-3 mb-5 rounded">
+                    <div class="card-body">
+                        <p class="card-text">Co-op</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row text-center text-white fs-6 rec-price fw-bold">
+            <div class="col-md-2 col-sm-6 col-6">
+                <div class="card shadow p-3 mb-5 rounded">
+                    <div class="card-body">
+                        <p class="card-text">2D</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-6 col-6">
+                <div class="card shadow p-3 mb-5 rounded">
+                    <div class="card-body">
+                        <p class="card-text">Survival</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-6 col-6">
+                <div class="card shadow p-3 mb-5 rounded">
+                    <div class="card-body">
+                        <p class="card-text">Strategy</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2 col-sm-6 col-6">
+                <div class="card shadow p-3 mb-5 rounded">
+                    <div class="card-body">
+                        <p class="card-text">FPS</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-6 col-6">
+                <div class="card shadow p-3 mb-5 rounded">
+                    <div class="card-body">
+                        <p class="card-text">PvP</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-6 col-6">
+                <div class="card shadow p-3 mb-5 rounded">
+                    <div class="card-body">
+                        <p class="card-text">Fantasy</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Lọc theo thể loại-->
+
+    <!-- Sản phẩm nổi bật -->
+    <div class="container pt-3">
+        <div class="row">
+            <div class="col-md-4 border-end border-secondary">
+                <div class="title text-center text-capitalize">
+                    <p class="display-6 text-white">Bán chạy nhất</p>
+                </div>
+                <hr class="border-bottom border-secondary">
+                <div class="product">
+                    <div class="row mb-4">
+                        <div class="col-md-5">
+                            <div class="img">
+                                <img class="img-fluid" src="20xx.webp" alt="">
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="h5 name fw-bolder text-white">
+                                20XX
+                            </div>
+                            <div class="price text-white">
+                                165000 đ
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-md-5">
+                            <div class="img">
+                                <img class="img-fluid" src="30xx.webp" alt="">
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="h5 name fw-bolder text-white">
+                                30XX
+                            </div>
+                            <div class="price text-white">
+                                188000 đ
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-md-5">
+                            <div class="img">
+                                <img class="img-fluid" src="adofai.webp" alt="">
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="h5 name fw-bolder text-white">
+                                A Dance of Fire and Ice
+                            </div>
+                            <div class="price text-white">
+                                80000 đ
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-md-5">
+                            <div class="img">
+                                <img class="img-fluid" src="among-us.webp" alt="">
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="h5 name fw-bolder text-white">
+                                Among Us
+                            </div>
+                            <div class="price text-white">
+                                70000
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-md-5">
+                            <div class="img">
+                                <img class="img-fluid" src="angels-of-death.webp" alt="">
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="h5 name fw-bolder text-white">
+                                Angels of Death
+                            </div>
+                            <div class="price text-white">
+                                120000 đ
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 border-end border-secondary">
+                <div class="title text-center text-capitalize">
+                    <p class="display-6 text-white">Đề cử tuần này</p>
+                </div>
+                <hr class="border-bottom border-secondary">
+                <div class="product">
+                    <div class="row mb-4">
+                        <div class="col-md-5">
+                            <div class="img">
+                                <img class="img-fluid" src="20xx.webp" alt="">
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="h5 name fw-bolder text-white">
+                                20XX
+                            </div>
+                            <div class="price text-white">
+                                165000 đ
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-md-5">
+                            <div class="img">
+                                <img class="img-fluid" src="30xx.webp" alt="">
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="h5 name fw-bolder text-white">
+                                30XX
+                            </div>
+                            <div class="price text-white">
+                                188000 đ
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-md-5">
+                            <div class="img">
+                                <img class="img-fluid" src="adofai.webp" alt="">
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="h5 name fw-bolder text-white">
+                                A Dance of Fire and Ice
+                            </div>
+                            <div class="price text-white">
+                                80000 đ
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-md-5">
+                            <div class="img">
+                                <img class="img-fluid" src="among-us.webp" alt="">
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="h5 name fw-bolder text-white">
+                                Among Us
+                            </div>
+                            <div class="price text-white">
+                                70000
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-md-5">
+                            <div class="img">
+                                <img class="img-fluid" src="angels-of-death.webp" alt="">
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="h5 name fw-bolder text-white">
+                                Angels of Death
+                            </div>
+                            <div class="price text-white">
+                                120000 đ
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="title text-center text-capitalize">
+                    <p class="display-6 text-white">Được yêu thích nhất</p>
+                </div>
+                <hr class="border-bottom border-secondary">
+                <div class="product">
+                    <div class="row mb-4">
+                        <div class="col-md-5">
+                            <div class="img">
+                                <img class="img-fluid" src="20xx.webp" alt="">
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="h5 name fw-bolder text-white">
+                                20XX
+                            </div>
+                            <div class="price text-white">
+                                165000 đ
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-md-5">
+                            <div class="img">
+                                <img class="img-fluid" src="30xx.webp" alt="">
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="h5 name fw-bolder text-white">
+                                30XX
+                            </div>
+                            <div class="price text-white">
+                                188000 đ
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-md-5">
+                            <div class="img">
+                                <img class="img-fluid" src="adofai.webp" alt="">
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="h5 name fw-bolder text-white">
+                                A Dance of Fire and Ice
+                            </div>
+                            <div class="price text-white">
+                                80000 đ
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-md-5">
+                            <div class="img">
+                                <img class="img-fluid" src="among-us.webp" alt="">
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="h5 name fw-bolder text-white">
+                                Among Us
+                            </div>
+                            <div class="price text-white">
+                                70000
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-md-5">
+                            <div class="img">
+                                <img class="img-fluid" src="angels-of-death.webp" alt="">
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="h5 name fw-bolder text-white">
+                                Angels of Death
+                            </div>
+                            <div class="price text-white">
+                                120000 đ
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Sản phẩm nổi bật -->
+
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3 bg-navbar-dark sticky-top">
+        <div class="container">
+            <ul class="nav justify-content-center mb-2">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Trang Chủ</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Điều khoản và dịch vụ</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Chính sách bảo mật</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Về chúng tôi</a></li>
+            </ul>
+            <ul class="nav justify-content-center border-bottom pb-3 mb-4">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><i class="fa-brands fa-facebook fa-2xl"></i></a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><i class="fa-brands fa-discord fa-2xl"></i></a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><i class="fa-brands fa-youtube fa-2xl"></i></a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><i class="fa-brands fa-twitter fa-2xl"></i></a></li>
+            </ul>
+            <p class="text-center text-muted">© 2023 GameStore</p>
+        </div>
+    </footer>
+    <!-- Footer -->
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/ee39434323.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script>
+        let swiper = new Swiper(".swiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 0,
+                depth: 100,
+                modifier: 3,
+                slideShadows: true
+            },
+            loop: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2
+                },
+                768: {
+                    slidesPerView: 1
+                },
+                1024: {
+                    slidesPerView: 2
+                },
+                1560: {
+                    slidesPerView: 5
+                }
+            }
+        });
+    </script>
+
+    <script src="./js/script.js"></script>
+</body>
+
+
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <!-- Navbar brand -->
+            <a class="navbar-brand" href="#">Navbar</a>
+
+            <!-- Toggle button -->
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+                data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fas fa-bars text-light"></i>
+            </button>
+
+            <!-- Collapsible wrapper -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Left links -->
+                <ul class="navbar-nav me-auto d-flex flex-row">
+                    <li class="nav-item text-center mx-2 mx-lg-1">
+                        <a href="index" class="nav-link" aria-current="page" href="#!">
+                            <div>
+                                <i class="fas fa-home fa-lg mb-1"></i>
+                            </div>
+                            Trang Chủ
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Search form -->
+                <form class="d-flex input-group w-auto ms-lg-3 my-3 my-lg-0">
+                    <input type="search" class="form-control search" placeholder="Tìm kiếm sản phẩm"
+                        aria-label="Search" />
+                    <button class="btn btn-primary" type="button" data-mdb-ripple-color="dark">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+
+                <!-- Right links -->
+                <ul class="navbar-nav ms-auto d-flex flex-row mt-3 mt-lg-0">
+                    <li class="nav-item dropdown text-center mx-2 mx-lg-1">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-mdb-toggle="dropdown" aria-expanded="false">
+                            <div>
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                            Tài Khoản
+                        </a>
+                        <!-- Dropdown menu -->
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item" href="{{ route('login') }}">
+                                    Đăng nhập
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{{ route('signup') }}">
+                                    Đăng ký
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item text-center mx-2 mx-lg-1">
+                        <a class="nav-link" aria-current="page" href="#">
+                            <div>
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <span class="badge rounded-pill badge-notification bg-info">0</span>
+                            </div>
+                            Giỏ Hàng
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar -->
+
+    <div class="container p-0">
+        <h1 class="h3 mb-3">&nbsp;</h1>
+        <div class="row">
+            <div class="col-md-5 col-xl-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">Cài đặt tài khoản</h5>
+                    </div>
+
+                    <div class="list-group list-group-flush" role="tablist">
+                        <a class="list-group-item list-group-item-action active" data-bs-toggle="list" href="#account"
+                            role="tab">
+                            Thông tin tài khoản
+                        </a>
+                        <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#password"
+                            role="tab">
+                            Đổi mật khẩu
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-7 col-xl-8">
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="account" role="tabpanel">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-actions float-right">
+                                </div>
+                                <h5 class="card-title mb-0">Thông tin cơ bản</h5>
+                            </div>
+                            <div class="card-body">
+                                <form>
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <div class="form-group">
+                                                <label for="inputUsername">Tên người dùng</label>
+                                                <input type="text" class="form-control" id="inputUsername"
+                                                    placeholder="Tên người dùng" />
+                                            </div>
+                                            <div class="form-group pt-2">
+                                                <label for="inputUsername">Ghi chú</label>
+                                                <textarea rows="4" class="form-control" id="inputBio"
+                                                    placeholder="Mô tả ngắn gọn về bạn"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="text-center">
+                                                <p class="h5">Ảnh đại diện</p>
+                                                <img alt="avatar.jpg"
+                                                    src="https://bootdey.com/img/Content/avatar/avatar1.pngasdasd"
+                                                    class="rounded-circle img-responsive mt-2" width="128"
+                                                    height="128" />
+                                                <div class="mt-2">
+                                                    <span class="btn btn-primary"><i class="fa fa-upload"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary">
+                                        Lưu thay đổi
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-actions float-right">
+                                </div>
+                                <h5 class="card-title mb-0">
+                                    Thông tin khác
+                                </h5>
+                            </div>
+                            <div class="card-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="inputEmail4">Email</label>
+                                        <input type="email" class="form-control" id="inputEmail4" placeholder="Nhập email" />
+                                    </div>
+                                    <div class="form-group pt-2">
+                                        <label for="inputAddress">Địa chỉ</label>
+                                        <input type="text" class="form-control" id="inputAddress"
+                                            placeholder="Nhập địa chỉ" />
+                                    </div>
+                                    <div class="form-group pt-2">
+                                        <button type="submit" class="btn btn-primary">
+                                            Lưu thay đổi
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="password" role="tabpanel">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Đổi mật khẩu</h5>
+
+                                <form>
+                                    <div class="form-group">
+                                        <label for="inputPasswordCurrent">Mật khẩu hiện tại</label>
+                                        <input type="password" class="form-control" id="inputPasswordCurrent" placeholder="Nhập mật khẩu hiện tại" />
+                                        <small><a href="#">Quên mật khẩu?</a></small>
+                                    </div>
+                                    <div class="form-group pt-2">
+                                        <label for="inputPasswordNew">Mật khẩu mới</label>
+                                        <input type="password" class="form-control" id="inputPasswordNew" placeholder="Nhập mật khẩu mới" />
+                                    </div>
+                                    <div class="form-group pt-2">
+                                        <label for="inputPasswordNew2">Nhập lại mật khẩu mới</label>
+                                        <input type="password" class="form-control" id="inputPasswordNew2" placeholder="Nhập mật khẩu mới" />
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">
+                                        Save changes
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/ee39434323.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+
+    <script src="./js/script.js"></script>
+</body>
+
+<!-- Footer -->
+<footer>
+    <div class="footer bg-dark text-white">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-3">
+                    <div class="h5">GIỚI THIỆU</div>
+                </div>
+                <div class="col-3">
+                    <div class="h5">TÀI KHOẢN</div>
+                </div>
+                <div class="col-3">
+                    <div class="h5">LIÊN HỆ</div>
+                </div>
+                <div class="col-3">
+                    <div class="h5">FANPAGE</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">Game bản quyền là gì?</div>
+                <div class="col-3">Đăng ký</div>
+                <div class="col-3">Email liên hệ: example@gmail.com</div>
+                <div class="col-3">
+                    <i class="fa-brands fa-facebook" style="color: #3b5998"></i>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">Điều khoản dịch vụ</div>
+                <div class="col-3">Đăng nhập</div>
+                <div class="col-3"></div>
+                <div class="col-3">
+                    <i class="fa-brands fa-discord" style="color: #5865f2"></i>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">Chính sách bảo mật</div>
+                <div class="col-3"></div>
+                <div class="col-3"></div>
+                <div class="col-3">
+                    <i class="fa-brands fa-youtube" style="color: #ff0000"></i>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-3"></div>
+                <div class="col-3"></div>
+                <div class="col-3">
+                    <i class="fa-brands fa-twitch" style="color: #6441a5"></i>
+                </div>
+            </div>
+            <div class="row"></div>
+            <div class="row"></div>
+        </div>
+    </div>
+</footer>
+<!-- Footer -->
+
+</html>

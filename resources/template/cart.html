@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Giỏ hàng</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+    <!-- Navbar -->
+    <nav class="shadow sticky-top navbar navbar-expand-lg navbar-dark bg-navbar-dark">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+            <!-- Navbar brand -->
+            <a class="navbar-brand" href="index.html">GAMESTORE</a>
+
+            <!-- Toggle button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fas fa-bars text-light"></i>
+            </button>
+
+
+            <!-- Collapsible wrapper -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Left links -->
+                <ul class="navbar-nav me-auto d-flex flex-row mt-3 mt-lg-0">
+                    <li class="nav-item text-center mx-2 mx-lg-1">
+                        <a href="index.html" class="nav-link" aria-current="page" href="#!">
+                            <div>
+                                <i class="fas fa-home fa-lg mb-1"></i>
+                            </div>
+                            Trang Chủ
+                        </a>
+                        <!--
+                    </li>
+                    <li class="nav-item text-center mx-2 mx-lg-1">
+                        <a class="nav-link" href="#!">
+                            <div>
+                                <i class="far fa-envelope fa-lg mb-1"></i>
+                                <span class="badge rounded-pill badge-notification bg-danger">11</span>
+                            </div>
+                            Link
+                        </a>
+                    </li>
+                    <li class="nav-item text-center mx-2 mx-lg-1">
+                        <a class="nav-link disabled" aria-disabled="true" href="#!">
+                            <div>
+                                <i class="far fa-envelope fa-lg mb-1"></i>
+                                <span class="badge rounded-pill badge-notification bg-warning">11</span>
+                            </div>
+                            Disabled
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown text-center mx-2 mx-lg-1">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <div>
+                                <i class="far fa-envelope fa-lg mb-1"></i>
+                                <span class="badge rounded-pill badge-notification bg-primary">11</span>
+                            </div>
+                            Dropdown
+                        </a> -->
+                        <!-- Dropdown menu -->
+                        <!--
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </li>
+                        </ul>
+                    </li> -->
+                </ul>
+                <!-- Left links -->
+
+                <!-- Right links -->
+                <ul class="navbar-nav ms-auto d-flex flex-row mt-3 mt-lg-0">
+                    <li class="nav-item dropdown text-center mx-2 mx-lg-1">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <div>
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                            Tài Khoản
+                        </a>
+                        <!-- Dropdown menu -->
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item" href="{{ route('login') }}">
+                                    Đăng nhập
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{{ route('signup') }}">
+                                    Đăng ký
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item text-center mx-2 mx-lg-1">
+                        <a class="nav-link" aria-current="page" href="cart.html">
+                            <div>
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <span class="badge rounded-pill badge-notification bg-info">
+                                    0
+                                </span>
+                            </div>
+                            Giỏ Hàng
+                        </a>
+                    </li>
+                </ul>
+                <!-- Right links -->
+
+                <!-- Search form -->
+                <form action="search.html" method="GET" class="d-flex input-group w-auto ms-lg-3 my-3 my-lg-0">
+                    <input type="search" name="q" class="form-control" placeholder="Tìm kiếm sản phẩm"
+                        aria-label="Search" />
+                    <button class="btn btn-primary" data-bs-ripple-color="dark">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+            </div>
+            <!-- Collapsible wrapper -->
+        </div>
+        <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
+
+    <div class="container-fluid pt-3">
+        <div class="container shadow">
+            <section class="h-100">
+                <div class="container py-5">
+                    <div class="row d-flex justify-content-center my-4">
+                        <div class="text-center">
+                        </div>
+                        <div class="text-center">
+                        </div>
+
+                        <div class="col-md-8">
+                            <div class="card bg-navbar-dark border-secondary mb-4">
+                                <div class="card-header bg-transparent border-secondary text-white py-3">
+                                    <div class="row">
+                                        <div class="col-md-7 col-6">
+                                            <h5 class="mb-0">Giỏ hàng - 1</h5>
+                                        </div>
+                                        <div class="col-md-5 col-6 d-flex justify-content-end">
+                                            <form action="http://localhost:8000/cart/remove" method="post">
+                                                <input type="hidden" name="_token"
+                                                    value="dXX8AlTTX21r8p3PDeJgoalkOkZlbMRUnW95uqan"> <input
+                                                    type="hidden" name="_method" value="delete"> <button
+                                                    name="clear_all" type="submit" class="btn btn-danger">Xóa
+                                                    hết</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <!-- Single item -->
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
+                                            <!-- Image -->
+                                            <div class="bg-image hover-overlay hover-zoom ripple rounded"
+                                                data-mdb-ripple-color="light">
+                                                <img src="adofai.webp" class="rounded shadow-sm w-100"
+                                                    alt="bloons-td-5.webp">
+                                                <a href="#!">
+                                                    <div class="mask"
+                                                        style="background-color: rgba(251, 251, 251, 0.2)">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <!-- Image -->
+                                        </div>
+
+                                        <div class="col-lg-5 col-md-6 mb-4 mb-lg-0 text-white">
+                                            <div class="row">
+                                                <p class="h5"><strong>A Dance of Fire and ice</strong></p>
+
+                                                <!-- Price -->
+                                                <p class="">188000 đ</p>
+                                                <!-- Price -->
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                                            <!-- Quantity -->
+                                            <div class="row" style="max-width: 300px">
+                                                <div class="col-2 me-4">
+                                                    <button class="btn btn-danger px-3"
+                                                        onclick="decrementQuantity(this)">
+                                                        <i class="fas fa-minus" aria-hidden="true"></i>
+                                                    </button>
+                                                </div>
+
+                                                <div class="form-outline col-6">
+                                                    <div class="text-center">
+                                                        <form action="http://localhost:8000/cart/update" method="post">
+                                                            <input type="hidden" name="_token"
+                                                                value="dXX8AlTTX21r8p3PDeJgoalkOkZlbMRUnW95uqan"> <input
+                                                                type="hidden" name="_method" value="put"> <input
+                                                                name="id" type="text" value="1" hidden="">
+                                                            <input id="quantity" min="1" name="quantity" value="1"
+                                                                type="number" class="form-control">
+                                                        </form>
+                                                    </div>
+
+                                                    <div class="pt-3 d-flex justify-content-center">
+                                                        <form action="http://localhost:8000/cart/remove" method="post">
+                                                            <input type="hidden" name="_token"
+                                                                value="dXX8AlTTX21r8p3PDeJgoalkOkZlbMRUnW95uqan"> <input
+                                                                type="hidden" name="_method" value="delete"> <input
+                                                                name="id" type="text" value="1" hidden="">
+                                                            <button name="delete" type="submit"
+                                                                class="btn btn-danger me-1 mb-2"
+                                                                data-mdb-toggle="tooltip" title="Remove item">
+                                                                <i class="fas fa-trash" aria-hidden="true"></i> Xóa
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-2">
+                                                    <button class="btn btn-primary px-3"
+                                                        onclick="incrementQuantity(this)">
+                                                        <i class="fas fa-plus" aria-hidden="true"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <!-- Quantity -->
+                                        </div>
+                                    </div>
+
+                                    <hr class="my-4 bg-white">
+                                    <!-- Single item -->
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-md-4 text-white">
+                            <div class="card mb-4 bg-navbar-dark border-secondary">
+                                <div class="card-header bg-transparent py-3 border-secondary">
+                                    <h5 class="mb-0">Thanh toán</h5>
+                                </div>
+                                <div class="card-body">
+                                    <input type="hidden" name="_token" value="dXX8AlTTX21r8p3PDeJgoalkOkZlbMRUnW95uqan">
+                                    <ul class="list-group list-group-flush">
+                                        <li
+                                            class="bg-navbar-dark text-white list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                                            Bloons TD 5
+                                            <span>188000 đ</span>
+                                        </li>
+                                        <li
+                                            class="bg-navbar-dark text-white list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+                                            <div>
+                                                <strong>Tổng cộng</strong>
+                                            </div>
+                                            <span>
+                                                <strong>
+                                                    <div name="total">188000 đ</div>
+                                                </strong>
+                                            </span>
+                                        </li>
+                                    </ul>
+
+
+                                    <input type="hidden" name="_token" value="dXX8AlTTX21r8p3PDeJgoalkOkZlbMRUnW95uqan">
+                                    <div class="d-flex justify-content-center pt-2">
+                                        <input type="text" name="total" hidden="" value="188000">
+                                        <button type="submit" class="btn btn-momo">
+                                            <img src="images/common/momo-white-logo.png" width="20" height="20" alt="">
+                                            &nbsp; Thanh toán bằng MoMo
+                                        </button>
+                                    </div>
+
+                                    <form action="http://localhost:8000/checkout/payVnpay" method="POST">
+                                        <input type="hidden" name="_token"
+                                            value="dXX8AlTTX21r8p3PDeJgoalkOkZlbMRUnW95uqan">
+                                        <div class="d-flex justify-content-center pt-2">
+                                            <input type="text" name="total" hidden="" value="188000">
+                                            <button name="redirect" type="submit" class="btn btn-vnpay">
+                                                <img src="images/common/vnpay-logo.png" width="20" height="20" alt="">
+                                                &nbsp; Thanh toán bằng VNPAY
+                                            </button>
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3 bg-navbar-dark sticky-top">
+        <div class="container">
+            <ul class="nav justify-content-center mb-2">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Trang Chủ</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Điều khoản và dịch vụ</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Chính sách bảo mật</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Về chúng tôi</a></li>
+            </ul>
+            <ul class="nav justify-content-center border-bottom pb-3 mb-4">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><i
+                            class="fa-brands fa-facebook fa-2xl"></i></a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><i
+                            class="fa-brands fa-discord fa-2xl"></i></a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><i
+                            class="fa-brands fa-youtube fa-2xl"></i></a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><i
+                            class="fa-brands fa-twitter fa-2xl"></i></a></li>
+            </ul>
+            <p class="text-center text-muted">© 2023 GameStore</p>
+        </div>
+    </footer>
+    <!-- Footer -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/ee39434323.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script>
+        function decrementQuantity(button) {
+            const quantityInput = button.parentNode.nextElementSibling.querySelector('input[type="number"]');
+            if (quantityInput) {
+                quantityInput.stepDown();
+            }
+        }
+
+        function incrementQuantity(button) {
+            const quantityInput = button.parentNode.previousElementSibling.querySelector('input[type="number"]');
+            if (quantityInput) {
+                quantityInput.stepUp();
+            }
+        }
+    </script>
+</body>
+
+</html>

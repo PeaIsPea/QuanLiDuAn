@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chi tiết</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <!-- Navbar brand -->
+            <a class="navbar-brand" href="#">Navbar</a>
+
+            <!-- Toggle button -->
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+                data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fas fa-bars text-light"></i>
+            </button>
+
+            <!-- Collapsible wrapper -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Left links -->
+                <ul class="navbar-nav me-auto d-flex flex-row">
+                    <li class="nav-item text-center mx-2 mx-lg-1">
+                        <a href="index.html" class="nav-link" aria-current="page" href="#!">
+                            <div>
+                                <i class="fas fa-home fa-lg mb-1"></i>
+                            </div>
+                            Trang Chủ
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Search form -->
+                <form class="d-flex input-group w-auto ms-lg-3 my-3 my-lg-0">
+                    <input type="search" class="form-control search" placeholder="Tìm kiếm sản phẩm"
+                        aria-label="Search" />
+                    <button class="btn btn-primary" type="button" data-mdb-ripple-color="dark">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+
+                <!-- Right links -->
+                <ul class="navbar-nav ms-auto d-flex flex-row mt-3 mt-lg-0">
+                    <li class="nav-item dropdown text-center mx-2 mx-lg-1">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-mdb-toggle="dropdown" aria-expanded="false">
+                            <div>
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                            Tài Khoản
+                        </a>
+                        <!-- Dropdown menu -->
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item" href="{{ route('login') }}">
+                                    Đăng nhập
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{{ route('signup') }}">
+                                    Đăng ký
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item text-center mx-2 mx-lg-1">
+                        <a class="nav-link" aria-current="page" href="#">
+                            <div>
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <span class="badge rounded-pill badge-notification bg-info">0</span>
+                            </div>
+                            Giỏ Hàng
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar -->
+
+    <!-- Khung Sản Phẩm -->
+    <div class="container">
+        <!-- col-lg-10 border p-3 main-section bg-white -->
+        <div class="col-lg-10 border main-section p-3 bg-white">
+            <div class="row m-0">
+                <div class="col-lg-4 left-side-product-box pb-3">
+                    <img src="../../public/../../public/images/bloons-td-5.webp" class="border-0 p-3" />
+                </div>
+                <div class="col-lg-8">
+                    <div class="right-side-pro-detail border-0 p-3 m-0">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <p class="m-0 p-0">Bloons TD 5</p>
+                            </div>
+                            <div class="col-lg-12">
+                                <p class="m-0 p-0 price-pro">188000 đ</p>
+                                <hr class="p-0 m-0" />
+                            </div>
+                            <div class="col-lg-12 pt-2">
+                                <h5>Mô tả</h5>
+                                <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                    ullamco laboris.</span>
+                                <hr class="m-0 pt-2 mt-2" />
+                            </div>
+                            <div class="col-lg-12">
+                                <h6>Quantity :</h6>
+                                <input type="number" class="form-control text-center w-100" value="1" />
+                            </div>
+                            <div class="col-lg-12 mt-3">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <a href="#" class="btn btn-primary w-100"><i
+                                                class="fa-solid fa-credit-card"></i> Mua ngay</a>
+                                    </div>
+                                    <div class="col-lg-6 pb-2">
+                                        <a href="#" class="btn btn-secondary w-100"><i
+                                                class="fa-solid fa-cart-shopping"></i> Thêm vào
+                                            giỏ</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Khung Sản Phẩm -->
+
+    <!-- Bài Viết Của Sản Phẩm -->
+    <div class="container"></div>
+    <!-- Bài Viết Của Sản Phẩm -->
+
+    <!-- Sản Phẩm Liên Quan -->
+    <div class="container pt-5">
+        <div class="container">
+            <p class="h3">Sản phẩm liên quan</p>
+            <div class="row">
+                <div class="col-3 py-3 mb-3 game">
+                    <div class="card h-100 border-0">
+                        <a data-bs-toggle="tooltip" data-bs-placement="top" title="{{ $game->name }}">
+                            <img class="card-img-top game-img center-img" src="../../public/images/bloons-td-5.webp" alt="..."
+                                loading="lazy" />
+                        </a>
+                        <div class="card-body">
+                            <div class="text-center">
+                                <a class="text-decoration-none text-dark" data-bs-toggle="tooltip"
+                                    data-bs-placement="top" title="{{ $game->name }}">
+                                    <p class="">Bloons TD 5</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="text-center d-flex justify-content-center align-items-end">
+                            <h5 class="text-danger">188000 đ</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-3 py-3 mb-3 game">
+                    <div class="card h-100 border-0">
+                        <a data-bs-toggle="tooltip" data-bs-placement="top" title="{{ $game->name }}">
+                            <img class="card-img-top game-img center-img" src="../../public/images/bloons-td-5.webp" alt="..."
+                                loading="lazy" />
+                        </a>
+                        <div class="card-body">
+                            <div class="text-center">
+                                <a class="text-decoration-none text-dark" data-bs-toggle="tooltip"
+                                    data-bs-placement="top" title="{{ $game->name }}">
+                                    <p class="">Bloons TD 5</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="text-center d-flex justify-content-center align-items-end">
+                            <h5 class="text-danger">188000 đ</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-3 py-3 mb-3 game">
+                    <div class="card h-100 border-0">
+                        <a data-bs-toggle="tooltip" data-bs-placement="top" title="{{ $game->name }}">
+                            <img class="card-img-top game-img center-img" src="../../public/images/bloons-td-5.webp" alt="..."
+                                loading="lazy" />
+                        </a>
+                        <div class="card-body">
+                            <div class="text-center">
+                                <a class="text-decoration-none text-dark" data-bs-toggle="tooltip"
+                                    data-bs-placement="top" title="{{ $game->name }}">
+                                    <p class="">Bloons TD 5</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="text-center d-flex justify-content-center align-items-end">
+                            <h5 class="text-danger">188000 đ</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-3 py-3 mb-3 game">
+                    <div class="card h-100 border-0">
+                        <a data-bs-toggle="tooltip" data-bs-placement="top" title="{{ $game->name }}">
+                            <img class="card-img-top game-img center-img" src="../../public/images/bloons-td-5.webp" alt="..."
+                                loading="lazy" />
+                        </a>
+                        <div class="card-body">
+                            <div class="text-center">
+                                <a class="text-decoration-none text-dark" data-bs-toggle="tooltip"
+                                    data-bs-placement="top" title="{{ $game->name }}">
+                                    <p class="">Bloons TD 5</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="text-center d-flex justify-content-center align-items-end">
+                            <h5 class="text-danger">188000 đ</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Sản Phẩm Liên Quan -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/ee39434323.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+
+    <script src="./js/script.js"></script>
+</body>
+
+<!-- Footer -->
+<footer>
+    <div class="footer bg-dark text-white">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-3">
+                    <div class="h5">GIỚI THIỆU</div>
+                </div>
+                <div class="col-3">
+                    <div class="h5">TÀI KHOẢN</div>
+                </div>
+                <div class="col-3">
+                    <div class="h5">LIÊN HỆ</div>
+                </div>
+                <div class="col-3">
+                    <div class="h5">FANPAGE</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">Game bản quyền là gì?</div>
+                <div class="col-3">Đăng ký</div>
+                <div class="col-3">Email liên hệ: example@gmail.com</div>
+                <div class="col-3">
+                    <i class="fa-brands fa-facebook" style="color: #3b5998"></i>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">Điều khoản dịch vụ</div>
+                <div class="col-3">Đăng nhập</div>
+                <div class="col-3"></div>
+                <div class="col-3">
+                    <i class="fa-brands fa-discord" style="color: #5865f2"></i>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">Chính sách bảo mật</div>
+                <div class="col-3"></div>
+                <div class="col-3"></div>
+                <div class="col-3">
+                    <i class="fa-brands fa-youtube" style="color: #ff0000"></i>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-3"></div>
+                <div class="col-3"></div>
+                <div class="col-3">
+                    <i class="fa-brands fa-twitch" style="color: #6441a5"></i>
+                </div>
+            </div>
+            <div class="row"></div>
+            <div class="row"></div>
+        </div>
+    </div>
+</footer>
+<!-- Footer -->
+
+</html>

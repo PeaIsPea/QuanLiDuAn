@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tìm kiếm sản phẩm</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="d-flex flex-column h-100">
+    <!-- Navbar -->
+    <nav class="shadow sticky-top navbar navbar-expand-lg navbar-dark bg-navbar-dark">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+            <!-- Navbar brand -->
+            <a class="navbar-brand" href="index.html">GAMESTORE</a>
+
+            <!-- Toggle button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fas fa-bars text-light"></i>
+            </button>
+
+
+            <!-- Collapsible wrapper -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Left links -->
+                <ul class="navbar-nav me-auto d-flex flex-row mt-3 mt-lg-0">
+                    <li class="nav-item text-center mx-2 mx-lg-1">
+                        <a href="index.html" class="nav-link" aria-current="page" href="#!">
+                            <div>
+                                <i class="fas fa-home fa-lg mb-1"></i>
+                            </div>
+                            Trang Chủ
+                        </a>
+                        <!--
+                    </li>
+                    <li class="nav-item text-center mx-2 mx-lg-1">
+                        <a class="nav-link" href="#!">
+                            <div>
+                                <i class="far fa-envelope fa-lg mb-1"></i>
+                                <span class="badge rounded-pill badge-notification bg-danger">11</span>
+                            </div>
+                            Link
+                        </a>
+                    </li>
+                    <li class="nav-item text-center mx-2 mx-lg-1">
+                        <a class="nav-link disabled" aria-disabled="true" href="#!">
+                            <div>
+                                <i class="far fa-envelope fa-lg mb-1"></i>
+                                <span class="badge rounded-pill badge-notification bg-warning">11</span>
+                            </div>
+                            Disabled
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown text-center mx-2 mx-lg-1">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <div>
+                                <i class="far fa-envelope fa-lg mb-1"></i>
+                                <span class="badge rounded-pill badge-notification bg-primary">11</span>
+                            </div>
+                            Dropdown
+                        </a> -->
+                        <!-- Dropdown menu -->
+                        <!--
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </li>
+                        </ul>
+                    </li> -->
+                </ul>
+                <!-- Left links -->
+
+                <!-- Right links -->
+                <ul class="navbar-nav ms-auto d-flex flex-row mt-3 mt-lg-0">
+                    <li class="nav-item dropdown text-center mx-2 mx-lg-1">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <div>
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                            Tài Khoản
+                        </a>
+                        <!-- Dropdown menu -->
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item" href="{{ route('login') }}">
+                                    Đăng nhập
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{{ route('signup') }}">
+                                    Đăng ký
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item text-center mx-2 mx-lg-1">
+                        <a class="nav-link" aria-current="page" href="cart.html">
+                            <div>
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <span class="badge rounded-pill badge-notification bg-info">
+                                    0
+                                </span>
+                            </div>
+                            Giỏ Hàng
+                        </a>
+                    </li>
+                </ul>
+                <!-- Right links -->
+
+                <!-- Search form -->
+                <form action="search.html" method="GET" class="d-flex input-group w-auto ms-lg-3 my-3 my-lg-0">
+                    <input type="search" name="q" class="form-control" placeholder="Tìm kiếm sản phẩm"
+                        aria-label="Search" />
+                    <button class="btn btn-primary" data-bs-ripple-color="dark">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+            </div>
+            <!-- Collapsible wrapper -->
+        </div>
+        <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
+
+    <div id="filter" class="container pt-3">
+        <div class="fw-bold text-white">
+            <h3>Tìm kiếm sản phẩm</h3>
+        </div>
+        <form action="{{ route('searchPage') }}" method="GET">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-floating text-white">
+                        <select class="form-select bg-navbar-dark border-0 text-white mb-3" name="genre" id="genre">
+                            <option value="">Tất cả</option>
+                        </select>
+                        <label for="genre">Chọn thể loại</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-floating mb-3 text-white">
+                                <input type="number" name="fromPrice"
+                                    class="form-control bg-navbar-dark border-0 text-white" id="fromPrice"
+                                    placeholder="Mức giá từ"
+                                    value="{{ Request::get('fromPrice') ? Request::get('fromPrice') : '' }}" />
+                                <label for="fromPrice">Mức giá từ</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-floating text-white">
+                                <input type="number" name="toPrice"
+                                    class="form-control bg-navbar-dark border-0 text-white" id="toPrice"
+                                    placeholder="Mức giá đến"
+                                    value="{{ Request::get('toPrice') ? Request::get('toPrice') : '' }}" />
+                                <label for="toPrice">Mức giá đến</label>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-floating text-white">
+                        <select class="form-select mb-3 bg-navbar-dark border-0 text-white" name="sortBy" id="sortBy">
+                            <option value="">Mặc định</option>
+                            <option value="bestSale" {{ Request::get('sortBy')==='bestSale' ? 'selected' : '' }}>
+                                Bán chạy nhất
+                            </option>
+                            <option value="lowest" {{ Request::get('sortBy')==='lowest' ? 'selected' : '' }}>
+                                Giá thấp nhất
+                            </option>
+                            <option value="highest" {{ Request::get('sortBy')==='highest' ? 'selected' : '' }}>
+                                Giá cao nhất
+                            </option>
+                            <option value="AZ" {{ Request::get('sortBy')==='AZ' ? 'selected' : '' }}>
+                                Theo tên A => Z
+                            </option>
+                            <option value="ZA" {{ Request::get('sortBy')==='ZA' ? 'selected' : '' }}>
+                                Theo tên Z => A
+                            </option>
+                        </select>
+                        <label for="sortBy">Sắp xếp theo</label>
+                    </div>
+                </div>
+                <div class="col-md-2 d-flex justify-content-center">
+                    <button class="col-md-12 btn btn-search">
+                        <div class="h5">
+                            <i class="fa-solid fa-filter"></i> Lọc sản phẩm
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="container col-md-2 d-flex justify-content-center pt-1">
+        <a href="/tim-kiem?q=">
+            <button class="col-md-12 btn btn-danger">
+                <i class="fa-solid fa-arrows-rotate"></i> Xóa bộ lọc
+            </button>
+        </a>
+    </div>
+    <div class="container" id="content">
+        <div class="row">
+            <div class="col-md-3 pt-3 mb-3 game" id="game_table">
+                <div class="card bg-transparent h-100 border-0">
+                    <a href="{{ route('detailgame',['id'=>$game->id]) }}" data-bs-toggle="tooltip"
+                        data-bs-placement="top" title="{{ $game->name }}">
+                        <img class="card-img-top game-img center-img" src="20xx.webp" alt="..." loading="lazy" />
+                    </a>
+                    <div class="card-body">
+                        <div class="">
+                            <a class="text-decoration-none text-dark" data-bs-toggle="tooltip" data-bs-placement="top"
+                                title="{{ $game->name }}" href="{{ route('detailgame',$game->id) }}">
+                                <p class="text-white">20XX</p>
+                            </a>
+                        </div>
+                        <div class="">
+                            <h5 class="text-white ">
+                                165000 đ</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 pt-3 mb-3 game" id="game_table">
+                <div class="card bg-transparent h-100 border-0">
+                    <a href="{{ route('detailgame',['id'=>$game->id]) }}" data-bs-toggle="tooltip"
+                        data-bs-placement="top" title="{{ $game->name }}">
+                        <img class="card-img-top game-img center-img" src="30xx.webp" alt="..." loading="lazy" />
+                    </a>
+                    <div class="card-body">
+                        <div class="">
+                            <a class="text-decoration-none text-dark" data-bs-toggle="tooltip" data-bs-placement="top"
+                                title="{{ $game->name }}" href="{{ route('detailgame',$game->id) }}">
+                                <p class="text-white">30XX</p>
+                            </a>
+                        </div>
+                        <div class="">
+                            <h5 class="text-white ">
+                                165000 đ</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 pt-3 mb-3 game" id="game_table">
+                <div class="card bg-transparent h-100 border-0">
+                    <a href="{{ route('detailgame',['id'=>$game->id]) }}" data-bs-toggle="tooltip"
+                        data-bs-placement="top" title="{{ $game->name }}">
+                        <img class="card-img-top game-img center-img" src="adofai.webp" alt="..." loading="lazy" />
+                    </a>
+                    <div class="card-body">
+                        <div class="">
+                            <a class="text-decoration-none text-dark" data-bs-toggle="tooltip" data-bs-placement="top"
+                                title="{{ $game->name }}" href="{{ route('detailgame',$game->id) }}">
+                                <p class="text-white">A Dance of Fire and Ice</p>
+                            </a>
+                        </div>
+                        <div class="">
+                            <h5 class="text-white ">
+                                165000 đ</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 pt-3 mb-3 game" id="game_table">
+                <div class="card bg-transparent h-100 border-0">
+                    <a href="{{ route('detailgame',['id'=>$game->id]) }}" data-bs-toggle="tooltip"
+                        data-bs-placement="top" title="{{ $game->name }}">
+                        <img class="card-img-top game-img center-img" src="among-us.webp" alt="..." loading="lazy" />
+                    </a>
+                    <div class="card-body">
+                        <div class="">
+                            <a class="text-decoration-none text-dark" data-bs-toggle="tooltip" data-bs-placement="top"
+                                title="{{ $game->name }}" href="{{ route('detailgame',$game->id) }}">
+                                <p class="text-white">Among Us</p>
+                            </a>
+                        </div>
+                        <div class="">
+                            <h5 class="text-white ">
+                                165000 đ</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 pt-3 mb-3 game" id="game_table">
+                <div class="card bg-transparent h-100 border-0">
+                    <a href="{{ route('detailgame',['id'=>$game->id]) }}" data-bs-toggle="tooltip"
+                        data-bs-placement="top" title="{{ $game->name }}">
+                        <img class="card-img-top game-img center-img" src="angels-of-death.webp" alt="..."
+                            loading="lazy" />
+                    </a>
+                    <div class="card-body">
+                        <div class="">
+                            <a class="text-decoration-none text-dark" data-bs-toggle="tooltip" data-bs-placement="top"
+                                title="{{ $game->name }}" href="{{ route('detailgame',$game->id) }}">
+                                <p class="text-white">Angels of Death</p>
+                            </a>
+                        </div>
+                        <div class="">
+                            <h5 class="text-white">
+                                165000 đ</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3 bg-navbar-dark sticky-top">
+        <div class="container">
+            <ul class="nav justify-content-center mb-2">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Trang Chủ</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Điều khoản và dịch vụ</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Chính sách bảo mật</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Về chúng tôi</a></li>
+            </ul>
+            <ul class="nav justify-content-center border-bottom pb-3 mb-4">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><i class="fa-brands fa-facebook fa-2xl"></i></a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><i class="fa-brands fa-discord fa-2xl"></i></a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><i class="fa-brands fa-youtube fa-2xl"></i></a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><i class="fa-brands fa-twitter fa-2xl"></i></a></li>
+            </ul>
+            <p class="text-center text-muted">© 2023 GameStore</p>
+        </div>
+    </footer>
+    <!-- Footer -->
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/ee39434323.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+</body>
+
+</html>
